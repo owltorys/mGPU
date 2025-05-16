@@ -1,0 +1,13 @@
+3D to 2D, Pinhole and Perspective Projection
+
+basic - concept
+https://www.youtube.com/watch?v=_EhY31MSbNM
+
+basic - math
+https://www.youtube.com/watch?v=o-xwmTODTUI
+
+final
+https://www.youtube.com/watch?v=U0_ONQQ5ZNM
+
+The Math of Computer Graphics - TEXTURES and SAMPLERS
+https://www.youtube.com/watch?v=DuQDx0ZIxa8
