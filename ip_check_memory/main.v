@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 /*
-這份程式會在一開始以及rst被按下時，將資料存入ram中，隨後以每秒一次的周期將資料讀出並印在LED上
+這份程式會在一開始以及rst被按下時，將資料存入ram中，隨後以每秒一次的頻率將資料讀出並印在LED上
 */
 module main(CLK, rst, dout);
 input CLK, rst;
