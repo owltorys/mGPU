@@ -1,0 +1,47 @@
+`timescale 1ns / 1ps
+module Scraling(
+    vtx1_X_raw, vtx1_Y_raw, vtx1_Z_raw,
+    vtx2_X_raw, vtx2_Y_raw, vtx2_Z_raw,
+    vtx3_X_raw, vtx3_Y_raw, vtx3_Z_raw,
+    vtx4_X_raw, vtx4_Y_raw, vtx4_Z_raw,
+    
+    vtx1_X_scaled, vtx1_Y_scaled, vtx1_Z_scaled,
+    vtx2_X_scaled, vtx2_Y_scaled, vtx2_Z_scaled,
+    vtx3_X_scaled, vtx3_Y_scaled, vtx3_Z_scaled,
+    vtx4_X_scaled, vtx4_Y_scaled, vtx4_Z_scaled
+    );
+    ///////////////////////////////////////////////////IO setup
+    //vtx=vertex(頂點)
+    input signed[15:0]
+        vtx1_X_raw, vtx1_Y_raw, vtx1_Z_raw,
+        vtx2_X_raw, vtx2_Y_raw, vtx2_Z_raw,
+        vtx3_X_raw, vtx3_Y_raw, vtx3_Z_raw,
+        vtx4_X_raw, vtx4_Y_raw, vtx4_Z_raw;
+    
+    output signed[15:0]
+        vtx1_X_scaled, vtx1_Y_scaled, vtx1_Z_scaled,
+        vtx2_X_scaled, vtx2_Y_scaled, vtx2_Z_scaled,
+        vtx3_X_scaled, vtx3_Y_scaled, vtx3_Z_scaled,
+        vtx4_X_scaled, vtx4_Y_scaled, vtx4_Z_scaled;
+    ///////////////////////////////////////////////////IO setup end
+    //null
+    //null
+    ///////////////////////////////////////////////////scraling
+    assign
+        vtx1_X_scaled = 16'd640*vtx1_X_raw,
+        vtx1_Y_scaled = 16'd480*vtx1_Y_raw,
+        vtx1_Z_scaled = vtx1_Z_raw,
+        
+        vtx2_X_scaled = 16'd640*vtx2_X_raw,
+        vtx2_Y_scaled = 16'd480*vtx2_Y_raw,
+        vtx2_Z_scaled = vtx2_Z_raw,
+        
+        vtx3_X_scaled = 16'd640*vtx3_X_raw,
+        vtx3_Y_scaled = 16'd480*vtx3_Y_raw,
+        vtx3_Z_scaled = vtx3_Z_raw,
+        
+        vtx4_X_scaled = 16'd640*vtx4_X_raw,
+        vtx4_Y_scaled = 16'd480*vtx4_Y_raw,
+        vtx4_Z_scaled = vtx4_Z_raw;
+    ///////////////////////////////////////////////////scraling end
+endmodule
