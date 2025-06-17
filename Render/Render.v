@@ -52,7 +52,8 @@ module Render(
         .vtx1_X(vtx1_X_raw), .vtx1_Y(vtx1_Y_raw), .vtx1_Z(vtx1_Z_raw),
         .vtx2_X(vtx2_X_raw), .vtx2_Y(vtx2_Y_raw), .vtx2_Z(vtx2_Z_raw),
         .vtx3_X(vtx3_X_raw), .vtx3_Y(vtx3_Y_raw), .vtx3_Z(vtx3_Z_raw),
-        .vtx4_X(vtx4_X_raw), .vtx4_Y(vtx4_Y_raw), .vtx4_Z(vtx4_Z_raw)
+        .vtx4_X(vtx4_X_raw), .vtx4_Y(vtx4_Y_raw), .vtx4_Z(vtx4_Z_raw),
+        .matrix_state(matrixState)
     );
     /////////////////////////////Normalization end
     //null
