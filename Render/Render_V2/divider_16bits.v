@@ -2,9 +2,9 @@
 
 module divider_16bits(clk, open, dividend, divisor, finish, quotient);
     input clk, open;
-    input [15:0] dividend, divisor;
+    input signed [15:0] dividend, divisor;
     output finish;
-    output [15:0] quotient;
+    output signed [15:0] quotient;
     wire [15:0] remainder;
 
     ip_divider_16bits core(
