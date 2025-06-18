@@ -32,7 +32,7 @@ module input_matrix(
         do11, do21, do31, do41,
         do12, do22, do32, do42,
         do13, do23, do33, do43,
-        do14, do24, do43, do44
+        do14, do24, do34, do44
         };
     //////////////////////////////////////////////wire connection end
 endmodule
