@@ -5,7 +5,8 @@ module divider_21bits(clk, open, dividend, divisor, finish, quotient);
     input [20:0] dividend, divisor;
     output finish;
     output [20:0] quotient;
-    wire [20:0] remainder;
+    wire [2:0] quotient_front;
+    wire [23:0] remainder;
 
     ip_divider_21bits core(
         .aclk(clk),
@@ -14,7 +15,7 @@ module divider_21bits(clk, open, dividend, divisor, finish, quotient);
         .s_axis_divisor_tvalid(open),
         .s_axis_divisor_tdata(divisor),
         .m_axis_dout_tvalid(finish),
-        .m_axis_dout_tdata({quotient, remainder})
+        .m_axis_dout_tdata({quotient_front, quotient, remainder})
     );
 
 endmodule
