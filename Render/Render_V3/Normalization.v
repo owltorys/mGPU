@@ -61,7 +61,7 @@ module Normalization(
         if(rst) begin
             calculate_state <= 4'b0;
             divider_counter <= 5'b0;
-        end else if(divider_counter >= 5'd20) begin
+        end else if(divider_counter >= 5'd25) begin
             divider_counter <= 5'b0;
             if(divider_open)
                 calculate_state <= next_calculate_state;
