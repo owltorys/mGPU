@@ -1,5 +1,5 @@
 `timescale 1ns / 1ps
-module Scraling(
+module Scaling(
     vtx1_X_raw, vtx1_Y_raw, vtx1_Z_raw,
     vtx2_X_raw, vtx2_Y_raw, vtx2_Z_raw,
     vtx3_X_raw, vtx3_Y_raw, vtx3_Z_raw,
@@ -26,7 +26,7 @@ module Scraling(
     ///////////////////////////////////////////////////IO setup end
     //null
     //null
-    ///////////////////////////////////////////////////scraling
+    ///////////////////////////////////////////////////scaling
     assign
         vtx1_X_scaled = 16'd640*vtx1_X_raw,
         vtx1_Y_scaled = 16'd480*vtx1_Y_raw,
@@ -43,5 +43,5 @@ module Scraling(
         vtx4_X_scaled = 16'd640*vtx4_X_raw,
         vtx4_Y_scaled = 16'd480*vtx4_Y_raw,
         vtx4_Z_scaled = vtx4_Z_raw;
-    ///////////////////////////////////////////////////scraling end
+    ///////////////////////////////////////////////////scaling end
 endmodule
