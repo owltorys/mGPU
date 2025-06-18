@@ -137,7 +137,7 @@ module CPU(
                     mtrxOut = projMtrx;
                 end
                 default:begin//latch in null satate(8) untill next fram
-                    mtrxOut = 256'b0;
+                    mtrxOut = 336'b0;
                 end
             endcase
         end else begin//if valid = 0
