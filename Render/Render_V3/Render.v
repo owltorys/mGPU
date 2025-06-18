@@ -49,6 +49,7 @@ module Render(
         vtx3_X_raw, vtx3_Y_raw, vtx3_Z_raw,
         vtx4_X_raw, vtx4_Y_raw, vtx4_Z_raw;
     Normalization uNorm(
+        .CLK(CLK), .rst(rts),
         .d11(d11), .d12(d12), .d13(d13), .d14(d14),
         .d21(d21), .d22(d22), .d23(d23), .d24(d24),
         .d31(d31), .d32(d32), .d33(d33), .d34(d34),
