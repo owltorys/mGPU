@@ -64,9 +64,9 @@ module object_info(
     always@(posedge fclk or posedge rst)begin
         if(rst)begin
             ////center
-            Xc = 21'h000000;
-            Yc = 21'h000000;
-            Zc = 21'h00b400;//45
+            Xc <= 21'h000000;
+            Yc <= 21'h000000;
+            Zc <= 21'h00b400;//45
             ////angles
             angleX <= 16'h0000;
             angleY <= 16'h0000;
