@@ -52,7 +52,7 @@ module Normalization(
     //null
     //null
     //////////////////////////////////////////////////////////////normalization
-    divider_16bits divider1(.clk(CLK), .open(divider_open), .dividend(dividend), .divisor(divisor), .quotient(quotient));
+    divider_21bits divider1(.clk(CLK), .open(divider_open), .dividend(dividend), .divisor(divisor), .quotient(quotient));
            
     assign divider_open = matrix_state == 4'h8;
     
