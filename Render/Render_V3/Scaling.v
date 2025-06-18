@@ -47,17 +47,17 @@ module Scaling(
         vtx4_Y_raw_buffer = 21'h1e00 * vtx4_Y_raw;
 
     assign
-        vtx1_X_scaled = vtx1_X_raw_buffer >>> 20,
-        vtx1_Y_scaled = vtx1_Y_raw_buffer >>> 20,
+        vtx1_X_scaled = vtx1_X_raw_buffer >>> 10,
+        vtx1_Y_scaled = vtx1_Y_raw_buffer >>> 10,
 
-        vtx2_X_scaled = vtx2_X_raw_buffer >>> 20,
-        vtx2_Y_scaled = vtx2_Y_raw_buffer >>> 20,
+        vtx2_X_scaled = vtx2_X_raw_buffer >>> 10,
+        vtx2_Y_scaled = vtx2_Y_raw_buffer >>> 10,
 
-        vtx3_X_scaled = vtx3_X_raw_buffer >>> 20,
-        vtx3_Y_scaled = vtx3_Y_raw_buffer >>> 20,
+        vtx3_X_scaled = vtx3_X_raw_buffer >>> 10,
+        vtx3_Y_scaled = vtx3_Y_raw_buffer >>> 10,
 
-        vtx4_X_scaled = vtx4_X_raw_buffer >>> 20,
-        vtx4_Y_scaled = vtx4_Y_raw_buffer >>> 20;
+        vtx4_X_scaled = vtx4_X_raw_buffer >>> 10,
+        vtx4_Y_scaled = vtx4_Y_raw_buffer >>> 10;
     /*
     assign
         vtx1_X_scaled = 16'd320*vtx1_X_raw,
