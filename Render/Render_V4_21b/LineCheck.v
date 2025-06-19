@@ -55,8 +55,8 @@ module LineCheck(
     //null
     //null
     ///////////////////////////////////////////////crossResult near zero test
-    wire signed [20:0]  TH_POS = 21'h400;   // +1
-    wire signed [20:0]  TH_NEG =-21'h400;   // -1
+    wire signed [20:0]  TH_POS = 21'hff00;   // +1
+    wire signed [20:0]  TH_NEG =-21'hff00;   // -1
     
     wire nearZero = (crossResult <  TH_POS) &&
                     (crossResult >  TH_NEG);
