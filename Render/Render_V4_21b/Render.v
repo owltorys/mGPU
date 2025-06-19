@@ -153,17 +153,17 @@ module Render(
             if(VGAvalid) begin // send data
                 case(onWhichLineWithPriority)
                     //points
-                    9'b1000_0000_00: vga_data<= 12'h000;//blck
-                    9'b0100_0000_00: vga_data<= 12'h000;//blck
-                    9'b0010_0000_00: vga_data<= 12'h000;//blck
-                    9'b0001_0000_00: vga_data<= 12'h000;//blck
+                    10'b1000_0000_00: vga_data<= 12'h000;//blck
+                    10'b0100_0000_00: vga_data<= 12'h000;//blck
+                    10'b0010_0000_00: vga_data<= 12'h000;//blck
+                    10'b0001_0000_00: vga_data<= 12'h000;//blck
                     //lines
-                    9'b0000_1000_00: vga_data<= 12'hf00;//red
-                    9'b0000_0100_00: vga_data<= 12'h0F0;//green
-                    9'b0000_0010_00: vga_data<= 12'h00F;//blue
-                    9'b0000_0001_00: vga_data<= 12'hFF0;//yellow
-                    9'b0000_0000_10: vga_data<= 12'hF0F;//洋紅
-                    9'b0000_0000_01: vga_data<= 12'h0FF;//青色
+                    10'b0000_1000_00: vga_data<= 12'hf00;//red
+                    10'b0000_0100_00: vga_data<= 12'h0F0;//green
+                    10'b0000_0010_00: vga_data<= 12'h00F;//blue
+                    10'b0000_0001_00: vga_data<= 12'hFF0;//yellow
+                    10'b0000_0000_10: vga_data<= 12'hF0F;//洋紅
+                    10'b0000_0000_01: vga_data<= 12'h0FF;//青色
                     default: vga_data<= 12'h49C;//backround 淺藍
                 endcase
             end else  vga_data<= 12'h000;
