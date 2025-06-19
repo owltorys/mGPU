@@ -1,8 +1,8 @@
 `timescale 1ns / 1ps
 
-module divider_21bits(clk, open, dividend, divisor_input, finish, quotient_output);
+module divider_21bits(clk, open, dividend_input, divisor_input, finish, quotient_output);
     input clk, open;
-    input [20:0] dividend, divisor_input;
+    input [20:0] dividend_input, divisor_input;
     output finish;
     output reg [20:0] quotient_output;
     wire [18:0] quotient_useless;
@@ -22,7 +22,7 @@ module divider_21bits(clk, open, dividend, divisor_input, finish, quotient_outpu
     ip_divider_21bits core(
         .aclk(clk),
         .s_axis_dividend_tvalid(open),
-        .s_axis_dividend_tdata({{3{dividend[20]}}, dividend}),
+        .s_axis_dividend_tdata({{3{dividend_input[20]}}, dividend_input}),
         .s_axis_divisor_tvalid(open),
         .s_axis_divisor_tdata({{3{divisor[20]}}, divisor}),
         .m_axis_dout_tvalid(finish),
