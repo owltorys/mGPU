@@ -10,22 +10,28 @@ module divider_21bits(clk, open, dividend_input, divisor_input, finish, quotient
     reg signed [20:0] dividend, divisor;
     
     always @(*) begin
-        if(dividend_input < 21'b0)
+        if(dividend_input[20] == 1'b1)
             dividend = -dividend_input;
         else
             dividend = dividend_input;
+            
         if(divisor_input == 21'b0) begin
             divisor = 21'b1;
-        end else if(divisor_input < 21'b0)
-            divisor = -divisor_input;
-        else
-            divisor = divisor_input;
+        end else begin
+            if(divisor_input[20] == 1'b1)
+                divisor = -divisor_input;
+            else
+                divisor = divisor_input;
+        end
+            
         if(divisor_input == 21'b0)
             quotient_output = 21'b0;
-        else if(dividend_input < 21'b0 ^ divisor_input < 21'b0)
-            quotient_output = -quotient;
-        else
-            quotient_output = quotient;
+        else begin
+            if(dividend_input[20] == 1'b1 ^ divisor_input[20] == 1'b1)
+                quotient_output = -quotient;
+            else
+                quotient_output = quotient;
+        end
     end
 
     ip_divider_21bits core(
