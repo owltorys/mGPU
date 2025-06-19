@@ -1,17 +1,21 @@
 `timescale 1ns / 1ps
 module MSB_arbiter(in, out);
-    input [5:0] in;
-    output reg [5:0] out;
+    input [9:0] in;
+    output reg [9:0] out;
     
     always@(*)begin
         case(1'b1)
-            in[5]: out = 6'b100000;
-            in[4]: out = 6'b010000;
-            in[3]: out = 6'b001000;
-            in[2]: out = 6'b000100;
-            in[1]: out = 6'b000010;
-            in[0]: out = 6'b000001;
-            default : out = 6'b000000;
+            in[9]: out = 10'b1000_0000_00;
+            in[8]: out = 10'b0010_0000_00;
+            in[7]: out = 10'b0010_0000_00;
+            in[6]: out = 10'b0001_0000_00;
+            in[5]: out = 10'b0000_1000_00;
+            in[4]: out = 10'b0000_0100_00;
+            in[3]: out = 10'b0000_0010_00;
+            in[2]: out = 10'b0000_0001_00;
+            in[1]: out = 10'b0000_0000_10;
+            in[0]: out = 10'b0000_0000_01;
+            default : out = 10'b0000_0000_00;
         endcase
     end
 endmodule
