@@ -117,9 +117,26 @@ module Render(
     /////////////////////////////calculate the lines end
     //null
     //null
+    /////////////////////////////calculate the points
+    wire onP1, onP2, onP3, onP4;
+    PointsCheck uPointsCheck(
+        .CLK(CLK), .rst(rst),
+        .h_cnt_Q(h_cnt_Q), .v_cnt_Q(v_cnt_Q),
+        .vtx1_X(vtx1_X), .vtx1_Y(vtx1_Y),
+        .vtx2_X(vtx2_X), .vtx2_Y(vtx2_Y),
+        .vtx3_X(vtx3_X), .vtx3_Y(vtx3_Y),
+        .vtx4_X(vtx4_X), .vtx4_Y(vtx4_Y),
+        .onP1(onP1), .onP2(onP2), .onP3(onP3), .onP4(onP4)
+    );
+    /////////////////////////////calculate the points end
+    //null
+    //null
     ////////////////////////////onWhichLineWithPriority
-    wire [5:0] onWhichLine, onWhichLineWithPriority;
-    assign onWhichLine = {onLine1, onLine2, onLine3, onLine4, onLine5, onLine6};
+    wire [9:0] onWhichLine, onWhichLineWithPriority;
+    assign onWhichLine = {
+        onP1, onP2, onP3, onP4,
+        onLine1, onLine2, onLine3, onLine4, onLine5, onLine6
+    };
     
     MSB_arbiter uarbiter(
         .in(onWhichLine),
@@ -135,12 +152,18 @@ module Render(
         end else begin
             if(VGAvalid) begin // send data
                 case(onWhichLineWithPriority)
-                    6'b100000: vga_data<= 12'hf00;//red
-                    6'b010000: vga_data<= 12'h0F0;//green
-                    6'b001000: vga_data<= 12'h00F;//blue
-                    6'b000100: vga_data<= 12'hFF0;//yellow
-                    6'b000010: vga_data<= 12'hF0F;//洋紅
-                    6'b000001: vga_data<= 12'h0FF;//青色
+                    //points
+                    9'b1000_0000_00: vga_data<= 12'h000;//blck
+                    9'b0100_0000_00: vga_data<= 12'h000;//blck
+                    9'b0010_0000_00: vga_data<= 12'h000;//blck
+                    9'b0001_0000_00: vga_data<= 12'h000;//blck
+                    //lines
+                    9'b0000_1000_00: vga_data<= 12'hf00;//red
+                    9'b0000_0100_00: vga_data<= 12'h0F0;//green
+                    9'b0000_0010_00: vga_data<= 12'h00F;//blue
+                    9'b0000_0001_00: vga_data<= 12'hFF0;//yellow
+                    9'b0000_0000_10: vga_data<= 12'hF0F;//洋紅
+                    9'b0000_0000_01: vga_data<= 12'h0FF;//青色
                     default: vga_data<= 12'h49C;//backround 淺藍
                 endcase
             end else  vga_data<= 12'h000;
