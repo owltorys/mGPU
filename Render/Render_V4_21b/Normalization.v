@@ -94,7 +94,8 @@ module Normalization(
             {vtx4_X, vtx4_Y} <= {next_vtx4_X, next_vtx4_Y};
         end
     end
-    
+
+    //dividend, divisor, next_output determination
     always @(*) begin
         {next_vtx1_X, next_vtx1_Y} = {vtx1_X, vtx1_Y};
         {next_vtx2_X, next_vtx2_Y} = {vtx2_X, vtx2_Y};
